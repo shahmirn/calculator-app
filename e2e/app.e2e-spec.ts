@@ -7,8 +7,8 @@ describe('calculator-app App', function() {
     page = new CalculatorAppPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying Calculator', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Calculator');
   });
 });
