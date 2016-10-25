@@ -25,4 +25,19 @@ describe('Service: Calculator', () => {
   it('should multiply two numbers successfully', inject([CalculatorService], (calculatorService: CalculatorService) => {
       expect(calculatorService.multiply(4, 2)).toBe(8);
   }));
+
+  it('should add two numbers successfully - observable', async(inject([CalculatorService], (service: CalculatorService) => {
+      service.addAsync(2, 2).subscribe(
+        value => expect(value).toBe(4)
+      );
+  })));
+
+  it('should add two numbers successfully - observable with delay', done => {
+    inject([CalculatorService], (service: CalculatorService) => {
+        service.addAsyncWithDelay(2, 2).subscribe(value => {
+            expect(value).toBe(4);
+            done();
+        });
+    })();
+  });
 });
