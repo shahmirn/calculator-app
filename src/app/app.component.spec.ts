@@ -5,6 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CalculatorService } from './calculator.service';
 
+import {
+  PanelModule,
+  ButtonModule,
+  LayoutModule,
+  MenuModule,
+  SidebarModule,
+  TopbarModule
+} from '@slb-planck-ui/core-web-components';
+
 describe('App: CalculatorApp', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -12,7 +21,9 @@ describe('App: CalculatorApp', () => {
         AppComponent
       ],
       imports: [
-        FormsModule
+        FormsModule,
+        PanelModule,
+        ButtonModule
       ],
       providers: [
         CalculatorService
