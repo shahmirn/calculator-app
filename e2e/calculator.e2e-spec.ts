@@ -18,7 +18,9 @@ describe('calculator-app App', function() {
     let addBtn: ElementFinder = element(by.id('addBtn'));
 
     number1.sendKeys('1');
+        browser.pause();
     number2.sendKeys('2');
+        browser.pause();
 
     addBtn.click();
     browser.pause();
