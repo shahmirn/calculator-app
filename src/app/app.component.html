@@ -1,25 +1,26 @@
-<h1>
-  {{title}}
-</h1>
+<slb-layout>
+  <div topbar>
+    <slb-topbar topbar [title]="title"></slb-topbar>
+  </div>
+  <div class="container-fluid" main-content>
+    <div class="row">
+      <div class="col-xs-12">
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12">
+        <slb-panel panelTitle="Calculator" [isCollapsible]="true">
+            <section class="tank-panel">
+              Number 1: <input type="number" id="number1" [(ngModel)]="number1" />
+              <br/>
+              Number 2: <input type="number" id="number2" [(ngModel)]="number2" />
+              <br/>
+              Result: <span id="calcResult">{{calcResult}}</span>
+              <br/>
 
-      <slb-panel panelTitle="Calculator" [isCollapsible]="true">
-          <section class="tank-panel">
-            Number 1: <input type="number" id="number1" [(ngModel)]="number1" />
-            <br/>
-            Number 2: <input type="number" id="number2" [(ngModel)]="number2" />
-            <br/>
-            Result: <span id="calcResult">{{calcResult}}</span>
-            <br/>
+              <button slb-button color="primary" id="addBtn" (click)="add()">Add</button>
+              <button slb-button color="" id="subBtn" (click)="subtract()">Subtract</button>
+            </section>
+        </slb-panel>
 
-            <button slb-button color="primary" id="addBtn" (click)="add()">Add</button>
-            <button slb-button color="" id="subBtn" (click)="subtract()">Subtract</button>
-          </section>
-      </slb-panel>
-
+      </div>
     </div>
   </div>
-</div>
+</slb-layout>
